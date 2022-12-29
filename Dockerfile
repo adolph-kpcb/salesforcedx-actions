@@ -1,9 +1,4 @@
 # FROM salesforce/salesforcedx:latest-rc-full
-
-# COPY entrypoint.sh /entrypoint.sh
-# ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["help"]
-
 FROM heroku/heroku:20
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -26,3 +21,7 @@ ENV PATH="/usr/local/sfdx/bin:$PATH"
 ENV SFDX_CONTAINER_MODE true
 ENV DEBIAN_FRONTEND=dialog
 ENV SHELL /bin/bash
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["help"]
