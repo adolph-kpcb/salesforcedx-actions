@@ -1,4 +1,6 @@
 #!/bin/sh
+ls -la
+echo "SFDX Container Running"
 
 set -e
 
